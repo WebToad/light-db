@@ -47,10 +47,7 @@ abstract class Model extends Object implements IModel
 	 *
 	 * @return string
 	 */
-	public function getTable()
-	{
-		return $this->table;
-	}
+	abstract protected function getTable();
 
 	/**
 	 * @return Selection
@@ -139,7 +136,7 @@ abstract class Model extends Object implements IModel
 	 * @param string $sql
 	 * @return mixed
 	 */
-	public function query($sql)
+	protected function query($sql)
 	{
 		return $this->connection->query($sql);
 	}
@@ -148,7 +145,7 @@ abstract class Model extends Object implements IModel
 	 * @param string $name
 	 * @return Selection
 	 */
-	public function selection($name = NULL)
+	protected function selection($name = NULL)
 	{
 		return $this->connection->table(($name == NULL ? $this->getTable() : $name));
 	}

@@ -15,11 +15,6 @@ interface IModel
 {
 
 	/**
-	 * @return string
-	 */
-	public function getTable();
-
-	/**
 	 * @param array $data
 	 * @return ActiveRow
 	 */
@@ -68,18 +63,6 @@ interface IModel
 	 * @return int
 	 */
 	public function deleteBy(array $conditions);
-
-	/**
-	 * @param $sql
-	 * @return mixed
-	 */
-	public function query($sql);
-
-	/**
-	 * @param string $table
-	 * @return Selection
-	 */
-	public function selection($table);
 
 	/** **************************** Transaction - START **************************** */
 
